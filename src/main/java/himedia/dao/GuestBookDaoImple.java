@@ -122,7 +122,7 @@ public class GuestBookDaoImple implements GuestBookDao {
 	}
 
 	@Override
-	public boolean delete(String no) {
+	public boolean delete(String pass) {
 		 Connection conn = null;
 		    PreparedStatement pstmt = null;
 		    int deleteCount = 0;
@@ -133,7 +133,7 @@ public class GuestBookDaoImple implements GuestBookDao {
 		        // PreparedStatment
 		        pstmt = conn.prepareStatement(sql);
 		        // 데이터 바인딩
-		        pstmt.setString(1, no); // Long 타입으로 설정
+		        pstmt.setString(1, pass); // Long 타입으로 설정
 		        deleteCount = pstmt.executeUpdate();
 		    } catch(SQLException e) {
 		        e.printStackTrace();
@@ -151,5 +151,39 @@ public class GuestBookDaoImple implements GuestBookDao {
 		    }
 		    return deleteCount == 1;
 		}
+
+	@Override
+	public GuestBookVo get(Long id) {
+		GuestBookVo vo = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = getConnection();
+			String sql = """
+					SELECT no, name, password, content, reg_date
+					FROM guestbook
+					WHERE no = ?
+					""";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, id);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Long no = rs.getLong("no");
+				String name = rs.getString("name");
+				String password = rs.getString("password");
+				String content = rs.getString("content");
+				Date regDate = rs.getDate("reg_date");
+				
+				vo = new GuestBookVo(no, name, password, content, regDate);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return vo;
+	}
+	
+	
 
 }

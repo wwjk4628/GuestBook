@@ -47,7 +47,7 @@ String dbpass = context.getInitParameter("dbpass");
 			<td><%=vo.getNo() %></td>
 			<td><%=vo.getName() %></td>
 			<td><%=vo.getCreatedAt() %></td>
-			<td><a href="deleteform.jsp">삭제</a></td>
+			<td><a href="deleteform.jsp?no=<%=vo.getNo() %>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan=4><%=vo.getContent() %>
