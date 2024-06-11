@@ -122,18 +122,18 @@ public class GuestBookDaoImple implements GuestBookDao {
 	}
 
 	@Override
-	public boolean delete(String pass) {
+	public boolean delete(String pass, Long no) {
 		 Connection conn = null;
 		    PreparedStatement pstmt = null;
 		    int deleteCount = 0;
 		    
 		    try {
 		        conn = getConnection();
-		        String sql = "DELETE FROM guestbook WHERE password = ?";
+		        String sql = "DELETE FROM guestbook WHERE no = ?";
 		        // PreparedStatment
 		        pstmt = conn.prepareStatement(sql);
 		        // 데이터 바인딩
-		        pstmt.setString(1, pass); // Long 타입으로 설정
+		        pstmt.setLong(1, no); // Long 타입으로 설정
 		        deleteCount = pstmt.executeUpdate();
 		    } catch(SQLException e) {
 		        e.printStackTrace();

@@ -16,13 +16,13 @@
     Long no = Long.parseLong(request.getParameter("no"));
 	GuestBookVo vo = dao.get(no);
    	if (pass.equals(vo.getPass())){
-   		dao.delete(pass);
+   		dao.delete(pass, no);
    		response.sendRedirect(request.getContextPath() + "/list.jsp");
 	} else {
 		
 		%>
 		<h1>비밀번호가 일치하지 않습니다.</h1>
-		<a href="<%= request.getContextPath() %>">메인으로 돌아가기</a>
+		<a href="<%= request.getContextPath() + "/list.jsp" %>">메인으로 돌아가기</a>
 		<%
 	}
 %>
