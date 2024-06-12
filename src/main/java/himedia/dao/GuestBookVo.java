@@ -3,20 +3,18 @@ package himedia.dao;
 import java.util.Date;
 
 public class GuestBookVo {
-	
+
 	private Long no;
 	private String name;
 	private String pass;
 	private String content;
 	private Date createdAt;
-	
+
 	public GuestBookVo() {
 	}
-	
-	
-	
+
 	public GuestBookVo(Long no, String name, String pass, String content, Date createdAt) {
-		
+
 		this.no = no;
 		this.name = name;
 		this.pass = pass;
@@ -24,10 +22,8 @@ public class GuestBookVo {
 		this.createdAt = createdAt;
 	}
 
-
-
 	public GuestBookVo(String name, String pass, String content) {
-		
+
 		this.name = name;
 		this.pass = pass;
 		this.content = content;
@@ -50,6 +46,8 @@ public class GuestBookVo {
 	}
 
 	public String getPass() {
+		if (pass == null)
+			return "";
 		return pass;
 	}
 
@@ -78,9 +76,5 @@ public class GuestBookVo {
 		return "GuestBookVo [no=" + no + ", name=" + name + ", pass=" + pass + ", content=" + content + ", createdAt="
 				+ createdAt + "]";
 	}
-	
-	
-	
-	
-	
+
 }

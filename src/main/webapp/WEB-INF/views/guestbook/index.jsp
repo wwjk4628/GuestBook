@@ -1,4 +1,4 @@
-﻿<%@page import="himedia.dao.GuestBookVo"%>
+<%@page import="himedia.dao.GuestBookVo"%>
 <%@page import="java.util.List"%>
 <%@page import="himedia.dao.GuestBookDaoImple"%>
 <%@page import="himedia.dao.GuestBookDao"%>
@@ -17,7 +17,8 @@ String dbpass = context.getInitParameter("dbpass");
 <title>방명록</title>
 </head>
 <body>
-	<form action="<%= request.getContextPath() %>/add.jsp" method="POST">
+	<form action="<%= request.getContextPath() %>/gb" method="POST">
+	<input type='hidden' name="a" value="add">
 		<table border=1 width=500>
 			<tr>
 				<td>이름</td>
@@ -47,7 +48,7 @@ String dbpass = context.getInitParameter("dbpass");
 			<td><%=vo.getNo() %></td>
 			<td><%=vo.getName() %></td>
 			<td><%=vo.getCreatedAt() %></td>
-			<td><a href="deleteform.jsp?no=<%=vo.getNo() %>">삭제</a></td>
+			<td><a href="<%= request.getContextPath() %>/gb?a=form&no=<%=vo.getNo() %>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan=4><%=vo.getContent() %>
