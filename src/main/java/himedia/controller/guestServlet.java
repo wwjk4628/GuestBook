@@ -18,7 +18,7 @@ public class guestServlet extends BaseServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 파라미터 a=form이면 입력 폼으로 이동
+		// 파라미터 a=form이면 입력 폼으로 이동1
 		String actionName = req.getParameter("a");
 		if ("form".equals(actionName)) {
 			// 사용자 입력 페이지로 FORWARD
@@ -64,7 +64,7 @@ public class guestServlet extends BaseServlet {
 			GuestBookVo vo = dao.get(no);
 			if (vo.getPass().equals(password)){
 			boolean success = dao.delete(password, no);
-			if (success) {
+			if (success){
 				System.out.println("DELETE SUCCESS");
 			} else {
 				System.out.println("DELETE FAILED");

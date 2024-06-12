@@ -5,7 +5,7 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 
-//	Context Parameter를 받아와서 자식들에게 물려주는 역할
+//	Context Parameter를 받아와서 자식들에게 물려주는 역할1
 public abstract class BaseServlet extends HttpServlet {
 	protected String dbuser = null;
 	protected String dbpass = null;

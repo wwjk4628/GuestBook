@@ -16,6 +16,7 @@
 			<td><input type="password" name="password"></td>
 			<td><input type="submit" value="확인"></td>
 			<td><a href="/GuestBook/gb">목록으로</a></td>
+			<!-- 1 -->
 		</tr>
 	</table>
 	</form>

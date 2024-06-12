@@ -6,7 +6,7 @@
     pageEncoding="UTF-8"%>
     
 <%
-// 데이터베이스 접속 정보 확인
+// 데이터베이스 접속 정보 확인1
 ServletContext context = getServletContext();
 
 String dbuser = context.getInitParameter("dbuser");

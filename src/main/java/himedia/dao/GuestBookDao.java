@@ -1,7 +1,7 @@
 package himedia.dao;
 
 import java.util.List;
-
+//1
 public interface GuestBookDao {
 	public List<GuestBookVo> getList();  
 	GuestBookVo get(Long no);

@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-// DB 접속 정보를 컨텍스트 파라미터로부터 받아오기
+// DB 접속 정보를 컨텍스트 파라미터로부터 받아오기1
 ServletContext context = getServletContext();
 String dbuser = context.getInitParameter("dbuser");
 String dbpass = context.getInitParameter("dbpass");

@@ -35,7 +35,7 @@ public class GuestBookDaoImple implements GuestBookDao {
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-//			System.err.println("JDBC 드라이버를 로드하지 못했습니다.");
+//			System.err.println("JDBC 드라이버를 로드1하지 못했습니다.");
 		}
 
 		return conn;

@@ -69,6 +69,7 @@ String dbpass = context.getInitParameter("dbpass");
 		</tr>
 	</table>
 	<br /> -->
+	<!-- 1 -->
 	<%
 	}
 	%>
